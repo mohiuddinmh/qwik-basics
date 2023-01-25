@@ -1,15 +1,15 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from '@builder.io/qwik-city';
-import Greet from "~/components/greet/greet";
+import Counter from "~/components/counter/counter";
 import Initiatives from "~/components/initiatives/Initiatives";
 
 export default component$(() => {
 
   return (
-    <div style={{backgroundColor: '#1a1a1a'}}>
-      <Greet name={'Habeeb'} />
+    <>
+      <Counter />
       <Initiatives initiatives={['apple', 'banana']} />
-    </div>
+    </>
   )
 })
 
