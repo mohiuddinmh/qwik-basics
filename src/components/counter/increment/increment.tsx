@@ -6,6 +6,8 @@ interface  IncrementProps {
 }
 
 const Increment = component$(({increment}: IncrementProps) => {
+  console.log('component$: Increment')
+
   return <button onClick$={increment}>Increment</button>
 })
 

@@ -5,9 +5,18 @@ interface InitiativesProps {
   initiatives: string[]
 }
 
-const Initiatives = component$(({ initiatives }: InitiativesProps) => {
+const Initiatives = component$(({ initiatives: initialInitiatives }: InitiativesProps) => {
+
+  console.log('component$: Initiatives')
 
   const edit = useSignal(false)
+
+  const initiatives = useSignal(initialInitiatives)
+
+  const addInititative$ = $((initiative: string) => {
+    initiatives.value = [...initiatives.value, initiative]
+    console.log(initiatives.value)
+  })
 
   const handleEditCLick = $(() => {
     edit.value = !edit.value
@@ -18,9 +27,9 @@ const Initiatives = component$(({ initiatives }: InitiativesProps) => {
     <h2>Initiatives</h2>
     <button onClick$={handleEditCLick}>Edit</button>
 
-    {edit.value && <EditInitiatives />}
+    {edit.value && <EditInitiatives addInitiative$={addInititative$} />}
 
-    {initiatives.map(initiative => <h3>{initiative}</h3>)}
+    {initiatives.value.map(initiative => <h3>{initiative}</h3>)}
   </>
 })
 

@@ -7,6 +7,8 @@ interface  DecrementProps {
 }
 
 const Decrement = component$(({decrement}: DecrementProps) => {
+  console.log('component$: Decrement')
+
   return <button onClick$={decrement}>Decrement</button>
 })
 

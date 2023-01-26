@@ -1,10 +1,24 @@
-import { component$ } from "@builder.io/qwik";
+import { $, component$, QRL, useSignal } from "@builder.io/qwik";
 
-const EditInitiatives = component$(() => {
+interface EditInitiativesProps{
+  addInitiative$:  QRL<(initiative: string) => void>
+}
+
+
+const EditInitiatives = component$(({addInitiative$}: EditInitiativesProps) => {
+  console.log('component$: EditInitiatives')
+
+  const initiative = useSignal('')
+
+  const handleInputChange = $((event: InputEvent) => {
+    initiative.value = (event.target as HTMLInputElement).value
+  })
+
   return <>
     <h4>Add Initiative</h4>
-    <input type="text" />
-    <button>add</button>
+    <input type="text" onInput$={handleInputChange}  />
+    <button onClick$={() => addInitiative$(initiative.value)}>add</button>
+    <div>{initiative.value}</div>
   </>
 })
 
