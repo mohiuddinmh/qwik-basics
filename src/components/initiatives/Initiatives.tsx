@@ -1,8 +1,8 @@
-import { $, component$, useSignal } from "@builder.io/qwik";
-import EditInitiatives from "~/components/initiatives/edit-initiatives/edit-initiatives";
+import { $, component$, useSignal } from '@builder.io/qwik'
+import EditInitiatives from '~/components/initiatives/edit-initiatives/edit-initiatives'
 
 interface InitiativesProps {
-  initiatives: string[]
+  initiatives: string[];
 }
 
 const Initiatives = component$(({ initiatives: initialInitiatives }: InitiativesProps) => {
@@ -33,4 +33,4 @@ const Initiatives = component$(({ initiatives: initialInitiatives }: Initiatives
   </>
 })
 
-export  default Initiatives
+export default Initiatives

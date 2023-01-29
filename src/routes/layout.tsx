@@ -1,7 +1,6 @@
-import { component$, Slot } from '@builder.io/qwik';
-import Header from '../components/header/header';
+import { component$, Slot } from '@builder.io/qwik'
 
-const Layout =  component$(() => {
+const Layout = component$(() => {
   return (
     <>
       <main>
@@ -10,7 +9,7 @@ const Layout =  component$(() => {
         </section>
       </main>
     </>
-  );
-});
+  )
+})
 
 export default Layout

@@ -1,8 +1,8 @@
-import { component$ } from "@builder.io/qwik";
-import type { DocumentHead } from '@builder.io/qwik-city';
-import Counter from "~/components/money-counter/counter";
-import Initiatives from "~/components/initiatives/Initiatives";
-import CounterProvider from "~/context/counter-provider/counter-provider";
+import { component$ } from '@builder.io/qwik'
+import type { DocumentHead } from '@builder.io/qwik-city'
+import Counter from '~/components/money-counter/counter'
+import Initiatives from '~/components/initiatives/Initiatives'
+import CounterProvider from '~/context/counter-provider/counter-provider'
 
 export default component$(() => {
 
@@ -22,7 +22,7 @@ export const head: DocumentHead = {
   meta: [
     {
       name: 'description',
-      content: 'Qwik site description',
-    },
-  ],
-};
+      content: 'Qwik site description'
+    }
+  ]
+}

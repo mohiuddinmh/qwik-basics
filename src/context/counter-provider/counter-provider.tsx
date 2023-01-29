@@ -1,17 +1,18 @@
-import { $, component$, createContext, Slot, useContext, useContextProvider, useStore } from "@builder.io/qwik";
-import type { QRL } from "@builder.io/qwik";
+import type { QRL } from '@builder.io/qwik'
+import { $, component$, createContext, Slot, useContext, useContextProvider, useStore } from '@builder.io/qwik'
 
 interface CounterContextState {
-  count: number
-}
-interface CounterContextActions {
-  increment$: QRL<() => void>
-  decrement$: QRL<() => void>
+  count: number;
 }
 
-interface CounterContextType{
-  state: CounterContextState
-  actions:CounterContextActions
+interface CounterContextActions {
+  increment$: QRL<() => void>;
+  decrement$: QRL<() => void>;
+}
+
+interface CounterContextType {
+  state: CounterContextState;
+  actions: CounterContextActions;
 }
 
 export const CounterContext = createContext<CounterContextType>('counter-context')
@@ -32,7 +33,7 @@ const CounterProvider = component$(() => {
     })
   }
 
-  useContextProvider(CounterContext, {state, actions})
+  useContextProvider(CounterContext, { state, actions })
   return <>
     <Slot />
   </>
