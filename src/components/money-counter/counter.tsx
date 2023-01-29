@@ -4,8 +4,6 @@ import Decrement from "~/components/money-counter/decrement/decrement";
 import styles from './counter.css?inline'
 import { useCounterContext } from "~/context/counter-provider/counter-provider";
 
-
-
 const Counter = component$(() => {
   const {state} = useCounterContext()
   useStylesScoped$(styles)
@@ -15,7 +13,6 @@ const Counter = component$(() => {
     <Increment />
     <Decrement />
   </>
-
 })
 
 export default Counter
