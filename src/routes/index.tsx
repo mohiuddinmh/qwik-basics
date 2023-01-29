@@ -1,13 +1,17 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from '@builder.io/qwik-city';
-import Counter from "~/components/counter/counter";
+import Counter from "~/components/money-counter/counter";
 import Initiatives from "~/components/initiatives/Initiatives";
+import CounterProvider from "~/context/counter-provider/counter-provider";
 
 export default component$(() => {
 
   return (
     <>
-      <Counter />
+      <CounterProvider>
+        <Counter />
+      </CounterProvider>
+
       <Initiatives initiatives={['apple', 'banana']} />
     </>
   )
