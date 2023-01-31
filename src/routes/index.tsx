@@ -3,16 +3,18 @@ import type { DocumentHead } from '@builder.io/qwik-city'
 import Counter from '~/components/money-counter/counter'
 import Initiatives from '~/components/initiatives/Initiatives'
 import CounterProvider from '~/context/counter-provider/counter-provider'
+import Users from '~/components/users/users'
 
 export default component$(() => {
 
   return (
     <>
-      <CounterProvider>
+      <Users />
+      {false && <CounterProvider>
         <Counter />
-      </CounterProvider>
+      </CounterProvider>}
 
-      <Initiatives initiatives={['apple', 'banana']} />
+      {false && <Initiatives initiatives={['apple', 'banana']} />}
     </>
   )
 })
